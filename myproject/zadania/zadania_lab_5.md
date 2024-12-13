@@ -2,7 +2,8 @@
 
 ## zadanie 1
 
-Person.object.all()
+```python
+Person.objects.all()
+```
 
 ## zadanie 2
-...
