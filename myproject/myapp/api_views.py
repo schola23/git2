@@ -48,3 +48,11 @@ def person_detail(request, pk):
     elif request.method == 'DELETE':
         person.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+    
+    def update(self, instance, validated_data):
+        instance.name = validated_data.get('name', instance.name)
+        instance.shirt_size = validated_data.get('shirt_size', instance.shirt_size)
+        instance.month_added = validated_data.get('month_added', instance.month_added)
+        instance.team = validated_data.get('team', instance.team)
+        instance.save()
+        return instance
