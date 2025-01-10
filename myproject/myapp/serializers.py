@@ -37,3 +37,12 @@ class PersonSerializer(serializers.Serializer):
         instance.save()
         return instance
     
+    
+    
+    class OsobaModelSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = Person
+            fields = '__all__'
+            read_only_fields = ['id']
+
+    
